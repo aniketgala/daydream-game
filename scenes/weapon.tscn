@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh5854c3rkkdp"]
+
+[ext_resource type="Script" uid="uid://f8bjp8jqecho" path="res://scripts/killzone.gd" id="1_bmw2d"]
+[ext_resource type="Texture2D" uid="uid://vdow0ho8ng8e" path="res://assets/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="1_xasec"]
+[ext_resource type="PackedScene" uid="uid://qfuoxa8e4b6" path="res://scenes/killzone.tscn" id="3_8fp1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxn4k"]
+size = Vector2(8, 59)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bmw2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5707964
+texture = ExtResource("1_xasec")
+region_enabled = true
+region_rect = Rect2(339, 99, 88, 13)
+
+[node name="killzone" parent="." instance=ExtResource("3_8fp1k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_uxn4k")
